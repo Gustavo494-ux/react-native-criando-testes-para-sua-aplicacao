@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, TextInput, TouchableOpacity, StyleSheet, Platform } from 'react-native';
+import { Text, TextInput, TouchableOpacity, StyleSheet,Platform } from 'react-native';
 import { BlurView } from 'expo-blur';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { ENVIADO } from '../../../negocio/constantes/estadosLance';

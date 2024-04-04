@@ -30,17 +30,27 @@ return new Promise((_,reject) => {
 }
 
 describe('repositorio/leilao',() =>{
+    //Função que roda antes de cada teste
+    beforeEach(() =>{
+        apiLeiloes.get.mockClear();
+    });
+
     describe('obtemLeiloes', () => {
       test('deve retornar uma lista de leilões',async () => { 
         apiLeiloes.get.mockImplementation(() => mockRequisicao(mockLeiloes))
         const leiloes = await obtemLeiloes();
+
         expect(leiloes).toEqual(mockLeiloes);
+        expect(apiLeiloes.get).toHaveBeenCalledWith('/leiloes');
+        expect(apiLeiloes.get).toHaveBeenCalledTimes(1);
       });
       
       test('deve retornar uma lista vazia quando a requisição falhar',async () => { 
         apiLeiloes.get.mockImplementation(() => mockRequisicaoErro(mockLeiloes))
         const leiloes = await obtemLeiloes();
         expect(leiloes).toEqual([]);
+        expect(apiLeiloes.get).toHaveBeenCalledWith('/leiloes');
+        expect(apiLeiloes.get).toHaveBeenCalledTimes(1);
       })  
     })
 })

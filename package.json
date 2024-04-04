@@ -33,7 +33,10 @@
     "react-test-renderer": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9"
+    "@babel/core": "^7.12.9",
+    "@testing-library/react": "^14.2.2",
+    "@testing-library/react-hooks": "^8.0.1",
+    "install": "^0.13.0"
   },
   "private": true,
   "jest": {
